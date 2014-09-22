@@ -1,0 +1,6 @@
+{
+  "name": "ember-cli-zero-clipboard",
+  "dependencies": {
+    "zeroclipboard": "~2.1.6"
+  }
+}

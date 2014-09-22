@@ -1,0 +1,24 @@
+{
+  "name": "ember-cli-zero-clipboard",
+  "version": "0.0.1",
+  "description": "Ember component for Zero Clipboard",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aomra015/ember-cli-zero-clipboard"
+  },
+  "keywords": [
+    "ember-addon",
+    "ember-cli",
+    "zero-clipboard"
+  ],
+  "author": "Ahmed Omran",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aomra015/ember-cli-zero-clipboard/issues"
+  },
+  "homepage": "https://github.com/aomra015/ember-cli-zero-clipboard"
+}
