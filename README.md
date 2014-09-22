@@ -28,5 +28,8 @@ In your handlebars template just do:
 will output:
 
 ```
-<button title="Copy to clipboard" class="btn btn-default" data-clipboard-text="https://github.com/aomra015/ember-cli-zero-clipboard">Copy</button>
+<button
+	title="Copy to clipboard"
+	class="btn btn-default"
+	data-clipboard-text="https://github.com/aomra015/ember-cli-zero-clipboard">Copy</button>
 ```
