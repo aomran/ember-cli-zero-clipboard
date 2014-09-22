@@ -27,7 +27,7 @@ In your handlebars template just do:
 
 will output:
 
-```
+```html
 <button
 	title="Copy to clipboard"
 	class="btn btn-default"
