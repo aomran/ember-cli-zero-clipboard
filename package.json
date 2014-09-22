@@ -1,7 +1,7 @@
 {
   "name": "ember-cli-zero-clipboard",
   "version": "0.0.1",
-  "description": "Ember component for Zero Clipboard",
+  "description": "Ember CLI addon for adding a 'copy to clipboard' button component.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
