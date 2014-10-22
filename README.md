@@ -52,7 +52,7 @@ export default ZeroClipboard.extend({
 ```
 
 ``` hbs
-// file: your-app/templates/components/custom-clipboard.js
+// file: your-app/templates/components/custom-clipboard.hbs
 
 <!-- because you don't want a button -->
 <a class="btn blue small"><i class="fa fa-clipboard"></i>{{title}}</a>
