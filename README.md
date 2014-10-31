@@ -22,39 +22,39 @@ In your handlebars template just do:
 #### Example
 
 ```
-{{zero-clipboard text=repoPath label="Copy" class="btn btn-default" innerClass="btn btn-other"}}
+{{zero-clipboard text=repoPath label="Copy" innerClass="btn btn-default"}}
 ```
 
 will output:
 
 ```html
-<div class="btn btn-default" title="Copy to clipboard" data-clipboard-text="https://github.com/aomra015/ember-cli-zero-clipboard">
-  <button class="btn btn-other">Copy</button>
+<div title="Copy to clipboard" data-clipboard-text="https://github.com/aomra015/ember-cli-zero-clipboard">
+  <button class="btn btn-default">Copy</button>
 </div>
 ```
 
 ### Extending
 
-You can subclass this module if you want to add specific behaviours or want to customise the output HTML in any way. To extend in a ember-cli you just need to create a component that is a subclass of ZeroClipboard:
-```
-// file: your-app/components/custom-clipboard.js
+You can subclass this module if you want to add specific behaviours or want to customize the output HTML in any way:
 
-import ZeroClipboard from './zero-clipboard';
+```
+// file: your-app/components/zero-clipboard.js
+
+import ZeroClipboard from 'ember-cli-zero-clipboard/components/zero-clipboard';
 
 export default ZeroClipboard.extend({
-    actions: {
-        afterCopy: function(){
-            // this gets triggered after the copy event
-            alert("after copy");
-        }
+  actions: {
+    afterCopy: function(){
+      // this gets triggered after the copy event
+      alert("after copy");
     }
+  }
 });
 ```
 
 ``` hbs
-// file: your-app/templates/components/custom-clipboard.hbs
+// file: your-app/templates/components/zero-clipboard.hbs
 
 <!-- because you don't want a button -->
-<a class="btn blue small"><i class="fa fa-clipboard"></i>{{title}}</a>
-
+<a {{bind-attr class=innerClass}}><i class="fa fa-clipboard"></i>{{label}}</a>
 ```

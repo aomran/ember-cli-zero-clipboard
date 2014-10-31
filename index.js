@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-  name: 'Ember CLI Zero Clipboard',
+  name: 'ember-cli-zero-clipboard',
 
   included: function included(app) {
     this.app = app;
