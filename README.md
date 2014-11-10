@@ -16,7 +16,14 @@ In your handlebars template just do:
 {{zero-clipboard text=TEXT label=LABEL}}
 ```
 
+or 
+
+```
+{{zero-clipboard cbTarget=TARGET_ELEMENT_ID label=LABEL}}
+```
+
 * TEXT: String, to be copied when button is clicked.
+* TARGET_ELEMENT_ID: String, value or html contents to be copied.
 * LABEL: String, the value of the button.
 
 #### Example
