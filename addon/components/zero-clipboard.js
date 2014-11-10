@@ -2,7 +2,7 @@ import Ember from 'ember';
 /* global ZeroClipboard */
 
 export default Ember.Component.extend({
-	attributeBindings: ['title', 'data-clipboard-text'],
+	attributeBindings: ['title', 'data-clipboard-text', 'data-clipboard-target'],
 	title: 'Copy to clipboard',
 	didInsertElement: function () {
 	  var client = new ZeroClipboard(this.get('element'));
@@ -14,5 +14,9 @@ export default Ember.Component.extend({
 	},
 	"data-clipboard-text": function(){
 		return this.get('text');
-	}.property('text')
+	}.property('text'),
+
+	"data-clipboard-target": function(){
+		return this.get('cbTarget');
+	}.property('cbTarget')
 });
