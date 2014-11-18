@@ -9,7 +9,7 @@ export default Ember.Component.extend({
 
 		//bind aftercopy to an ember event
 	  client.on("aftercopy", function(event) {
-			this.send('aftercopy', event);
+			this.send('afterCopy', event);
 	  }.bind(this));
 	},
 	"data-clipboard-text": function(){
