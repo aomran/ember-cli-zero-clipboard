@@ -8,9 +8,9 @@ export default Ember.Component.extend({
 	  var client = new ZeroClipboard(this.get('element'));
 
 		//bind aftercopy to an ember event
-	  client.on("aftercopy", function(event) {
+	  client.on("aftercopy", Ember.run.bind(this, function(event) {
 			this.send('afterCopy', event);
-	  }.bind(this));
+	  }));
 	},
 	"data-clipboard-text": function(){
 		return this.get('text');
