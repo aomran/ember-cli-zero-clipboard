@@ -7,6 +7,13 @@ export default Ember.Component.extend({
 	didInsertElement: function () {
 	  var client = new ZeroClipboard(this.get('element'));
 
+		var events = [
+			'ready',
+			'beforeCopy',
+			'copy',
+			'afterCopy',
+			'destroy'
+		] // 'error'
 		//bind aftercopy to an ember event
 	  client.on("aftercopy", Ember.run.bind(this, function(event) {
 			this.send('afterCopy', event);
