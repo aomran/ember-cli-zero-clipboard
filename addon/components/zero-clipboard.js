@@ -14,10 +14,16 @@ export default Ember.Component.extend({
 			'afterCopy',
 			'destroy'
 		] // 'error'
+		var _this = this;
+		events.each(function(action){
+			client.on(action, Ember.run.bind(this, function(event) {
+				this.send(action, event);
+		  }));
+		}, _this);
 		//bind aftercopy to an ember event
-	  client.on("aftercopy", Ember.run.bind(this, function(event) {
-			this.send('afterCopy', event);
-	  }));
+	  // client.on("aftercopy", Ember.run.bind(this, function(event) {
+		// 	this.send('afterCopy', event);
+	  // }));
 	},
 	"data-clipboard-text": function(){
 		return this.get('text');
