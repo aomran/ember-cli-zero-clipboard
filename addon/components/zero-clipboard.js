@@ -7,7 +7,6 @@ export default Ember.Component.extend({
 	zeroClipboardEvents: ['ready', 'beforeCopy', 'copy', 'afterCopy', 'destroy'],
 	didInsertElement: function () {
 	  var client = new ZeroClipboard(this.get('element'));
-		// 'error'
 		var _this = this;
 		//bind Zero Clipboard events to ember events
 		this.get('zeroClipboardEvents').forEach(function(action){
@@ -15,6 +14,10 @@ export default Ember.Component.extend({
 				this.send(action, event);
 		  }));
 		}, _this);
+		//pass errors to Ember
+		client.on('error', Ember.run.bind(this, function(e) {
+			Ember.Logger.error(e.message);
+		}));
 	},
 	"data-clipboard-text": function(){
 		return this.get('text');
