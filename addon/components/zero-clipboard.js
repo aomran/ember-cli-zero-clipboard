@@ -11,7 +11,12 @@ export default Ember.Component.extend({
     //bind Zero Clipboard events to ember events
     this.get('zeroClipboardEvents').forEach(function(action){
       client.on(action, Ember.run.bind(this, function(event) {
-        this.send(action, event);
+        try {
+					this.send(action, event);
+				}
+				catch(error) {
+					Ember.Logger.debug(error.message);
+				}
       }));
     }, _this);
   },
