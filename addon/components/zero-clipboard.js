@@ -20,11 +20,11 @@ export default Ember.Component.extend({
       }));
     }, _this);
   },
-  "data-clipboard-text": function(){
+  "data-clipboard-text": Ember.computed('text', function(){
     return this.get('text');
-  }.property('text'),
+  }),
 
-  "data-clipboard-target": function(){
+  "data-clipboard-target": Ember.computed('cbTarget', function(){
     return this.get('cbTarget');
-  }.property('cbTarget')
+  })
 });
