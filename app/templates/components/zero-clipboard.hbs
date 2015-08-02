@@ -1,1 +1,5 @@
-<button class="{{innerClass}}">{{label}}</button>
+{{#if template}}
+  {{yield}}
+{{else}}
+  <button class="{{innerClass}}">{{label}}</button>
+{{/if}}
