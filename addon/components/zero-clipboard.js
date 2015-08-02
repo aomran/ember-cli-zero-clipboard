@@ -4,9 +4,10 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   attributeBindings: ['title', 'data-clipboard-text', 'data-clipboard-target'],
   title: 'Copy to clipboard',
-  
+
   didInsertElement: function() {
     var client = new ZeroClipboard(this.get('element'));
+    if (!client) { return; }
 
     //bind aftercopy to an ember event
     client.on("aftercopy", Ember.run.bind(this, function(event) {
