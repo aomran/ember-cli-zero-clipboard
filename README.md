@@ -4,7 +4,7 @@ This is an Ember CLI addon for adding a [Zero Clipboard](http://zeroclipboard.or
 
 ### Installation
 
-```
+```bash
 $ npm install --save-dev ember-cli-zero-clipboard
 ```
 
@@ -12,13 +12,13 @@ $ npm install --save-dev ember-cli-zero-clipboard
 
 In your handlebars template just do:
 
-```
+```hbs
 {{zero-clipboard text=TEXT label=LABEL}}
 ```
 
-or 
+or
 
-```
+```hbs
 {{zero-clipboard cbTarget=TARGET_ELEMENT_ID label=LABEL}}
 ```
 
@@ -28,7 +28,7 @@ or
 
 #### Example
 
-```
+```hbs
 {{zero-clipboard text=repoPath label="Copy" innerClass="btn btn-default"}}
 ```
 
@@ -42,9 +42,9 @@ will output:
 
 ### Extending
 
-You can subclass this module if you want to add specific behaviours or want to customize the output HTML in any way:
+You can subclass this module if you want to add specific behaviours:
 
-```
+```js
 // file: your-app/components/zero-clipboard.js
 
 import ZeroClipboard from 'ember-cli-zero-clipboard/components/zero-clipboard';
@@ -53,15 +53,17 @@ export default ZeroClipboard.extend({
   actions: {
     afterCopy: function(){
       // this gets triggered after the copy event
+      // see https://github.com/zeroclipboard/zeroclipboard/blob/master/docs/api/ZeroClipboard.md#static-events for full list of events
       alert("after copy");
     }
   }
 });
 ```
 
-``` hbs
-// file: your-app/templates/components/zero-clipboard.hbs
+Pass a block if you want to customize the html:
 
-<!-- because you don't want a button -->
-<a {{bind-attr class=innerClass}}><i class="fa fa-clipboard"></i>{{label}}</a>
+``` hbs
+{{#zero-clipboard text='Hello'}}
+  <p>COPY ME!</p>
+{{/zero-clipboard}}
 ```
