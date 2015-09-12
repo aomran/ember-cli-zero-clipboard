@@ -11,11 +11,11 @@
     "build": "ember build",
     "test": "ember try:testall"
   },
-  "repository": "https://github.com/aomra015/ember-cli-zero-clipboard",
+  "repository": "https://github.com/aomran/ember-cli-zero-clipboard",
   "bugs": {
-    "url": "https://github.com/aomra015/ember-cli-zero-clipboard/issues"
+    "url": "https://github.com/aomran/ember-cli-zero-clipboard/issues"
   },
-  "homepage": "https://github.com/aomra015/ember-cli-zero-clipboard",
+  "homepage": "https://github.com/aomran/ember-cli-zero-clipboard",
   "engines": {
     "node": ">= 0.10.0"
   },
