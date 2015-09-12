@@ -14,11 +14,15 @@ export default Ember.Component.extend({
     this.get('zeroClipboardEvents').forEach(function(action){
       client.on(action, Ember.run.bind(this, function(event) {
         try {
-      	  this.send(action, event);
-      	}
-      	catch(error) {
-      	  Ember.Logger.debug(error.message);
-      	}
+          if(this.attrs[action]) {
+            this.attrs[action](event);
+          } else {
+            this.send(action, event);
+          }
+        }
+        catch(error) {
+          Ember.Logger.debug(error.message);
+        }
       }));
     }, self);
   },

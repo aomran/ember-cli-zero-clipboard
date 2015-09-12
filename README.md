@@ -60,6 +60,13 @@ export default ZeroClipboard.extend({
 });
 ```
 
+You can also pass a closure action, without subclassing the component.
+
+```hbs
+{{zero-clipboard afterCopy=(action "alertAfterCopy")}}
+
+```
+
 Pass a block if you want to customize the html:
 
 ``` hbs
